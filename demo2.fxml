@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Demo2Controller">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="670.0" BorderPane.alignment="CENTER">
+        <items>
+            <MenuButton fx:id="SaveMenu" mnemonicParsing="false">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newFileSelected" text="New" />
+                <MenuItem mnemonicParsing="false" onAction="#saveFileSelected" text="Save" />
+                <MenuItem mnemonicParsing="false" onAction="#loadFileSelected" text="Load" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/png/save.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
+          <Button fx:id="playButton" mnemonicParsing="false" onAction="#playButtonOnAction" prefHeight="39.0" prefWidth="39.0">
+               <graphic>
+                  <ImageView fx:id="playImage" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/png/start.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="newbarButton" mnemonicParsing="false" onAction="#newbarButtonClicked">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/png/stave-3.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <MenuButton fx:id="noteButton" mnemonicParsing="false">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cacelNoteSelected" text="Cancel" />
+                <MenuItem mnemonicParsing="false" onAction="#quarternoteSelected" text="Quarter" />
+                <MenuItem mnemonicParsing="false" onAction="#quarterdotnoteSelected" text="Quarter-dot" />
+                  <MenuItem mnemonicParsing="false" onAction="#halfnoteSelected" text="Half" />
+                  <MenuItem mnemonicParsing="false" onAction="#halfdotnoteSelected" text="Half-dot" />
+                  <MenuItem mnemonicParsing="false" onAction="#eighthnoteSelected" text="Eighth" />
+                  <MenuItem mnemonicParsing="false" onAction="#sixteenthnoteSelected" text="Sixteenth" />
+                  <MenuItem mnemonicParsing="false" onAction="#wholenoteSelected" text="Whole" />
+              </items>
+               <graphic>
+                  <ImageView fx:id="noteImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/png/quarter-note.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
+            <MenuButton fx:id="liftButton" mnemonicParsing="false">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#noneliftSelected" text="None" />
+                <MenuItem mnemonicParsing="false" onAction="#sharpliftSelected" text="Sharp" />
+                  <MenuItem mnemonicParsing="false" onAction="#flatliftSelected" text="Flat" />
+                  <MenuItem mnemonicParsing="false" onAction="#naturalliftSelected" text="Natural" />
+              </items>
+               <graphic>
+                  <ImageView fx:id="liftImage" fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/png/sharp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
+            <MenuButton fx:id="restButton" mnemonicParsing="false" onAction="#restButtonClicked">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cacelRestSelected" text="Cancel" />
+                  <MenuItem mnemonicParsing="false" onAction="#quarterrestSelected" text="Quarter-rest" />
+                  <MenuItem mnemonicParsing="false" onAction="#halfrestSelected" text="Half-rest" />
+                  <MenuItem mnemonicParsing="false" onAction="#eighthrestSelected" text="Eighth-rest" />
+                  <MenuItem mnemonicParsing="false" onAction="#wholerestSelected" text="Whole-rest" />
+               </items>
+               <graphic>
+                  <ImageView fx:id="restImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/png/quarter-note-rest.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteOnAction">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/png/Delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#editOnAction">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/png/Edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <MenuButton mnemonicParsing="false">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#pianoAction" text="Piano" />
+                <MenuItem mnemonicParsing="false" onAction="#violinAction" text="Violin" />
+                  <MenuItem mnemonicParsing="false" onAction="#guitarAction" text="Guitar" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/png/guitar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
+            <TextField fx:id="instrument" editable="false" prefHeight="38.0" prefWidth="125.0" text="PIANO" />
+            <Button fx:id="pageButton" mnemonicParsing="false" onAction="#pageButtonOnAction" prefHeight="40.0" text="Reference" />
+            <MenuButton fx:id="speedButton" mnemonicParsing="false" text="Allegro(default)" textAlignment="CENTER">
+              <items>
+                  <RadioMenuItem fx:id="Grave" mnemonicParsing="false" onAction="#graveSelected" style="-fx-font-family: TRON;" text="Grave 40">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="speed" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="Larghetto" mnemonicParsing="false" onAction="#larghettoSelected" text="Larghetto 50" toggleGroup="$speed" />
+                  <RadioMenuItem fx:id="Adagio" mnemonicParsing="false" onAction="#adagioSelected" text="Adagio 60" toggleGroup="$speed" />
+                  <RadioMenuItem fx:id="Andante" mnemonicParsing="false" onAction="#andanteSelected" text="Andante 70" toggleGroup="$speed" />
+                  <RadioMenuItem fx:id="Andantino" mnemonicParsing="false" onAction="#andantinoSelected" text="Andantino 80" toggleGroup="$speed" />
+                  <RadioMenuItem fx:id="Allegretto" mnemonicParsing="false" onAction="#allegrettoSelected" text="Allegretto 110" toggleGroup="$speed" />
+                  <RadioMenuItem fx:id="Allegro" mnemonicParsing="false" onAction="#allegroSelected" selected="true" text="Allegro 120(defalt)" toggleGroup="$speed" />
+                  <RadioMenuItem fx:id="Vivace" mnemonicParsing="false" onAction="#vivaceSelected" text="Vivace 145" toggleGroup="$speed" />
+                  <RadioMenuItem fx:id="Presto" mnemonicParsing="false" onAction="#prestoSelected" text="Presto 180" toggleGroup="$speed" />
+                  <RadioMenuItem fx:id="Pretissimo" mnemonicParsing="false" onAction="#pretissimoSelected" text="Pretissimo 220" toggleGroup="$speed" />
+              </items>
+               <font>
+                  <Font name="Rage Italic" size="20.0" />
+               </font>
+            </MenuButton>
+            <MenuButton fx:id="M_m" mnemonicParsing="false" text="Major/Minor">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#Gmajor_eminorAction" text="G-major_e-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/G-major_e-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#Dmajor_hminorAction" text="D-major_h-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/D-major_h-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Amajor_fsharpminorAction" text="A-major_f-sharp-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/A-major_f-sharp-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Emajor_csharpminorAction" text="E-major_c-sharp-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/E-major_c-sharp-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Bmajor_gsharpminor" text="B-major_g-sharp-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/B-major_g-sharp-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Fsharpmajor_dsharpminorAction" text="F-sharp-major_d-sharp-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/F-sharp-major_d-sharp-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Csharpmajor_asharpminorAction" text="C-sharp-major_a-sharp-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/C-sharp-major_a-sharp-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Fmajor_dminorAction" text="F-major_d-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/F-major_d-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Bflatmajor_gminorAction" text="B-flat-major_g-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/B-flat-major_g-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Eflatmajor_cminorAction" text="E-flat-major_c-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/E-flat-major_c-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Aflatmajor_fminorAction" text="A-flat-major_f-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/A-flat-major_f-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Dflatmajor_bflatminorAction" text="D-flat-major_b-flat-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/D-flat-major_b-flat-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Gflatmajor_eflatminorAction" text="G-flat-major_e-flat-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/G-flat-major_e-flat-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#Cflatmajor_aflatminorAction" text="C-flat-major_a-flat-minor">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/major_minor/C-flat-major_a-flat-minor.svg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#MmCancel" text="Cancel" />
+              </items>
+               <font>
+                  <Font name="Vivaldi Italic" size="20.0" />
+               </font>
+            </MenuButton>
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <ScrollPane prefHeight="160.0" prefWidth="670.0" BorderPane.alignment="CENTER">
+         <content>
+            <Pane fx:id="pane" onMouseEntered="#mouseEnteredPane" onMouseExited="#mouseExitedPane" />
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
